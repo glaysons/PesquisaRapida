@@ -30,8 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RepositorioGenerico.Entities, Version=1.0.7.0, Culture=neutral, PublicKeyToken=b205877ad21d4617, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RepositorioGenerico.Pattern.1.0.7\lib\net40\RepositorioGenerico.Entities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RepositorioGenerico.Pattern, Version=1.0.7.0, Culture=neutral, PublicKeyToken=b205877ad21d4617, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RepositorioGenerico.Pattern.1.0.7\lib\net40\RepositorioGenerico.Pattern.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,7 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultador.cs" />
+    <Compile Include="Exceptions\AConfiguracaoExigeQueSejaDefinidoUmCampoChaveOuResultadoException.cs" />
+    <Compile Include="Exceptions\AConfiguracaoNaoPermiteMaisQueUmCampoChaveOuResultadoException.cs" />
+    <Compile Include="Exceptions\TipoDeveSerObrigatoriamenteEnumException.cs" />
+    <Compile Include="Pesquisador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultadoPesquisa.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\PesquisaRapida\configuradorPesquisa.factory.js" />
@@ -49,6 +64,15 @@
     <Content Include="Scripts\PesquisaRapida\janelaPesquisaRapida.directive.js" />
     <Content Include="Scripts\PesquisaRapida\janelaPesquisaRapida.html" />
     <Content Include="Scripts\PesquisaRapida\pesquisaRapida.factory.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PesquisaRapida.Pattern\PesquisaRapida.Pattern.csproj">
+      <Project>{78320b3e-dd1d-46ff-86c9-179a96749a1a}</Project>
+      <Name>PesquisaRapida.Pattern</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
