@@ -1,12 +1,8 @@
 ﻿using PesquisaRapida.Pattern.Estrutura;
-using PesquisaRapida.Pattern.Exceptions;
-using PesquisaRapida.Pattern.Helpers;
-using System;
-using System.Linq.Expressions;
 
 namespace PesquisaRapida.Pattern
 {
-	public class ResultadoPersonalizado<T> : IResultadoPersonalizado
+	internal class ResultadoPersonalizado<T> : IResultadoPersonalizado
 	{
 
 		public string Campo { get; }
@@ -21,30 +17,12 @@ namespace PesquisaRapida.Pattern
 
 		public bool Resultado { get; }
 
-		public ResultadoPersonalizado(Expression<Func<T, object>> campo, string expressaoSql, bool chave = false, bool resultado = false)
+		public ResultadoPersonalizado(string campo, string titulo, string expressaoSql, bool colunaVisivel, bool chave = false, bool resultado = false)
 		{
-			Campo = ConsultarNomeDoCampo(campo);
-			Titulo = string.Empty;
-			ExpressaoSql = expressaoSql;
-			ColunaVisivel = false;
-			Chave = chave;
-			Resultado = resultado;
-		}
-
-		private string ConsultarNomeDoCampo(Expression<Func<T, object>> campo)
-		{
-			var propriedade = ExpressionHelper.PropriedadeDaExpressao(campo);
-			if (propriedade == null)
-				throw new CampoInvalidoException();
-			return propriedade.Name;
-		}
-
-		public ResultadoPersonalizado(Expression<Func<T, object>> campo, string titulo, string expressaoSql, bool chave = false, bool resultado = false)
-		{
-			Campo = ConsultarNomeDoCampo(campo);
+			Campo = campo;
 			Titulo = titulo;
 			ExpressaoSql = expressaoSql;
-			ColunaVisivel = true;
+			ColunaVisivel = colunaVisivel;
 			Chave = chave;
 			Resultado = resultado;
 		}

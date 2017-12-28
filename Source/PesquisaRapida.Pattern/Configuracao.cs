@@ -21,6 +21,8 @@ namespace PesquisaRapida.Pattern
 
 		public abstract string CampoChave { get; }
 
+		public virtual string TituloChave { get; } = "Cód.";
+
 		public virtual TipoCampos TipoChave { get; } = TipoCampos.Integer;
 
 		public abstract string CampoResultado { get; }
@@ -43,8 +45,8 @@ namespace PesquisaRapida.Pattern
 		private List<IResultadoPersonalizado> CriarResultadoPadrao()
 		{
 			var resultado = new List<ResultadoPersonalizado<CodigoResultado>>();
-			resultado.Add(new ResultadoPersonalizado<CodigoResultado>(c => c.Codigo, CampoChave, chave: true));
-			resultado.Add(new ResultadoPersonalizado<CodigoResultado>(c => c.Codigo, CampoResultado, resultado: true));
+			resultado.Add(new ResultadoPersonalizado<CodigoResultado>("Codigo", TituloChave, CampoChave, colunaVisivel: true, chave: true));
+			resultado.Add(new ResultadoPersonalizado<CodigoResultado>("Resultado", TituloResultado, CampoResultado, colunaVisivel: true, resultado: true));
 			return resultado.Cast<IResultadoPersonalizado>().ToList();
 		}
 

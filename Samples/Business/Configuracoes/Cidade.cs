@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using PesquisaRapida.Pattern;
+﻿using PesquisaRapida.Pattern;
 
 namespace Business.Configuracoes
 {
@@ -9,14 +8,12 @@ namespace Business.Configuracoes
 
 		public override string Tabela { get; } = "Cidades";
 
-		public override IList<ResultadoPersonalizado<CidadeView>> ResultadoPersonalizado { get; }
-
-		public Cidade()
+		protected override void PersonalizarResultadoPadrao()
 		{
-			ResultadoPersonalizado = new List<ResultadoPersonalizado<CidadeView>>();
-			ResultadoPersonalizado.Add(new ResultadoPersonalizado<CidadeView>(c => c.Cod, "CodigoCidade", chave: true));
-			ResultadoPersonalizado.Add(new ResultadoPersonalizado<CidadeView>(c => c.Nome, "Nome", resultado: true));
-			ResultadoPersonalizado.Add(new ResultadoPersonalizado<CidadeView>(c => c.Estado, "CodigoEstado"));
+			AdicionarCampo(c => c.Cod, "Cód.", "CodigoCidade", chave: true);
+			AdicionarCampo(c => c.Nome, "Nome", "Nome", resultado: true);
+			AdicionarCampo(c => c.Estado, "Estado", "CodigoEstado");
 		}
+
 	}
 }
