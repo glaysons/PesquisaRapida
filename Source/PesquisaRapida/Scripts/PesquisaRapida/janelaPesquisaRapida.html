@@ -1,0 +1,38 @@
+﻿<div id="janelaModalPesquisaRapida" style="display: none;" class="modal" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="cancelarJanela()" aria-hidden="true">&times;</button>
+				<h4 class="modal-title cliente">{{ tituloJanela }}</h4>
+			</div>
+			<div class="modal-body">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left:0px;">
+					<div class="input-group">
+						<input id="txtPesquisar" ng-model="termo" type="text" placeholder="Pesquise aqui ..." class="form-control" />
+						<div class="input-group-btn">
+							<a class="btn" href="#" ng-click="pesquisarNovamente()"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</div>
+				<table class="table table-nomargin table-condensed gradeQuePermiteSelecao">
+					<thead>
+						<tr>
+							<th ng-repeat="titulo in titulos track by $index">{{ titulo }}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in itensEncontrados track by $index" ng-click="selecionarItem($index, item)" ng-dblclick="confirmarJanela($index, item)" ng-class="{ 'registroSelecionado' : ($index == indice) }">
+							<td style="cursor: pointer" ng-repeat="coluna in colunas track by $index">{{item[coluna]}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<a class="btn btn-primary" ng-click="confirmarJanela()">Confirmar</a>
+				<a class="btn" ng-click="cancelarJanela()">Cancelar</a>
+				<a class="btn" ng-disabled="!existePaginaAnterior()" ng-click="voltarPagina()">Voltar</a>
+				<a class="btn" ng-disabled="!existePaginaPosterior()" ng-click="avancarPagina()">Avançar</a>
+			</div>
+		</div>
+	</div>
+</div>

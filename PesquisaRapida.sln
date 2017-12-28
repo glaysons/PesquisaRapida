@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{3C3D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PesquisaRapida.Pattern", "Source\PesquisaRapida.Pattern\PesquisaRapida.Pattern.csproj", "{78320B3E-DD1D-46FF-86C9-179A96749A1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PesquisaRapida", "Source\PesquisaRapida\PesquisaRapida.csproj", "{D70ABF7C-E397-4090-BD48-F6AEC8DC472C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{78320B3E-DD1D-46FF-86C9-179A96749A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78320B3E-DD1D-46FF-86C9-179A96749A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78320B3E-DD1D-46FF-86C9-179A96749A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70ABF7C-E397-4090-BD48-F6AEC8DC472C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70ABF7C-E397-4090-BD48-F6AEC8DC472C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70ABF7C-E397-4090-BD48-F6AEC8DC472C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70ABF7C-E397-4090-BD48-F6AEC8DC472C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

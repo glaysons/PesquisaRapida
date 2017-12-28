@@ -1,16 +1,21 @@
 ﻿using PesquisaRapida.Pattern.Estrutura;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PesquisaRapida.Pattern
 {
-	public abstract class Configuracao<TResultado> : IConfiguracao
+	public abstract class Configuracao : IConfiguracao
 	{
 
-		private IEnumerable<IResultadoPersonalizado> _resultado = null;
+		private IEnumerable<IResultadoPersonalizado> _resultado;
+
+		public Type TipoObjeto
+		{
+			get { return typeof(CodigoResultado); }
+		}
 
 		public abstract string TituloConfiguracao { get; }
-
-		public abstract int Rotina { get; }
 
 		public abstract string Tabela { get; }
 
@@ -24,31 +29,8 @@ namespace PesquisaRapida.Pattern
 
 		public IEnumerable<IResultadoPersonalizado> Resultado
 		{
-			get
-			{
-				if (_resultado != null)
-					foreach (var item in _resultado)
-						yield return item;
-				else
-				{
-					if (ResultadoPersonalizado == null)
-						yield break;
-					foreach (var item in ResultadoPersonalizado)
-						yield return item;
-				}
-			}
-			set
-			{
-				_resultado = value;
-			}
+			get { return _resultado ?? (_resultado = CriarResultadoPadrao()); }
 		}
-
-		/// <summary>
-		/// Ao mudar esta propriedade, as colunas de código e descrição devem ser adicionadas
-		/// manualmente, inclusive refletindo a estrutura do objeto ItemPesquisa ou 
-		/// personalizado na pasta [Visualizacoes] conforme a mesma convenção.
-		/// </summary>
-		public virtual IList<ResultadoPersonalizado<TResultado>> ResultadoPersonalizado { get; } = null;
 
 		public virtual IList<Dependente> Dependentes { get; }
 
@@ -58,13 +40,13 @@ namespace PesquisaRapida.Pattern
 
 		public virtual string Ordem { get; }
 
-		public virtual bool PossuiCampoEmpresa { get; } = true;
-
-		public virtual bool PossuiCampoEstabelecimento { get; }
-
-		public virtual bool FiltrarEstabelecimentoUsuario { get; }
-
-		public virtual bool FiltrarApenasAtivos { get; } = true;
+		private List<IResultadoPersonalizado> CriarResultadoPadrao()
+		{
+			var resultado = new List<ResultadoPersonalizado<CodigoResultado>>();
+			resultado.Add(new ResultadoPersonalizado<CodigoResultado>(c => c.Codigo, CampoChave, chave: true));
+			resultado.Add(new ResultadoPersonalizado<CodigoResultado>(c => c.Codigo, CampoResultado, resultado: true));
+			return resultado.Cast<IResultadoPersonalizado>().ToList();
+		}
 
 	}
 }

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F38C7C12-1453-44D5-8782-56C9481DFF25}</ProjectGuid>
+    <ProjectGuid>{D70ABF7C-E397-4090-BD48-F6AEC8DC472C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Business</RootNamespace>
-    <AssemblyName>Business</AssemblyName>
+    <RootNamespace>PesquisaRapida</RootNamespace>
+    <AssemblyName>PesquisaRapida</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,18 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuracoes\Cidade.cs" />
-    <Compile Include="Configuracoes\CidadePorEstado.cs" />
-    <Compile Include="Configuracoes\CidadeView.cs" />
-    <Compile Include="Configuracoes\Estado.cs" />
-    <Compile Include="PesquisaRapida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Source\PesquisaRapida.Pattern\PesquisaRapida.Pattern.csproj">
-      <Project>{78320b3e-dd1d-46ff-86c9-179a96749a1a}</Project>
-      <Name>PesquisaRapida.Pattern</Name>
-    </ProjectReference>
+    <Content Include="Scripts\PesquisaRapida\configuradorPesquisa.factory.js" />
+    <Content Include="Scripts\PesquisaRapida\caixaPesquisaRapida.directive.js" />
+    <Content Include="Scripts\PesquisaRapida\caixaTextoPesquisaRapida.directive.js" />
+    <Content Include="Scripts\PesquisaRapida\caixaTextoPesquisaRapida.html" />
+    <Content Include="Scripts\PesquisaRapida\janelaPesquisaRapida.directive.js" />
+    <Content Include="Scripts\PesquisaRapida\janelaPesquisaRapida.html" />
+    <Content Include="Scripts\PesquisaRapida\pesquisaRapida.factory.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

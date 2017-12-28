@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PesquisaRapida.Pattern</RootNamespace>
     <AssemblyName>PesquisaRapida.Pattern</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,7 +35,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuracao`.cs" />
     <Compile Include="Configuracao.cs" />
+    <Compile Include="Estrutura\CodigoResultado.cs" />
     <Compile Include="Estrutura\Dependente.cs" />
     <Compile Include="Estrutura\IConfiguracao.cs" />
     <Compile Include="Estrutura\IResultadoPersonalizado.cs" />

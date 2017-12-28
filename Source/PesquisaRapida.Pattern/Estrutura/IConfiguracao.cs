@@ -1,25 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PesquisaRapida.Pattern.Estrutura
 {
 	public interface IConfiguracao
 	{
 
-		string TituloConfiguracao { get; }
+		Type TipoObjeto { get; }
 
-		int Rotina { get; }
+		string TituloConfiguracao { get; }
 
 		string Tabela { get; }
 
-		string CampoChave { get; }
-
 		TipoCampos TipoChave { get; }
-
-		string CampoResultado { get; }
 
 		string TituloResultado { get; }
 
-		IEnumerable<IResultadoPersonalizado> Resultado { get; set; }
+		IEnumerable<IResultadoPersonalizado> Resultado { get; }
 
 		IList<Dependente> Dependentes { get; }
 
@@ -28,14 +25,6 @@ namespace PesquisaRapida.Pattern.Estrutura
 		string Relacionamento { get; }
 
 		string Ordem { get; }
-
-		bool PossuiCampoEmpresa { get; }
-
-		bool PossuiCampoEstabelecimento { get; }
-
-		bool FiltrarEstabelecimentoUsuario { get; }
-
-		bool FiltrarApenasAtivos { get; }
 
 	}
 }
