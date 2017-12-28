@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PesquisaRapida.Pattern", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PesquisaRapida", "Source\PesquisaRapida\PesquisaRapida.csproj", "{D70ABF7C-E397-4090-BD48-F6AEC8DC472C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PesquisaRapida.Pattern.Tests", "Testes\PesquisaRapida.Pattern.Tests\PesquisaRapida.Pattern.Tests.csproj", "{1D07EFF3-1F38-4239-A530-EEA037CD6DBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{DCD2B57B-1825-47C8-89AD-73FBD3803841}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{D70ABF7C-E397-4090-BD48-F6AEC8DC472C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D70ABF7C-E397-4090-BD48-F6AEC8DC472C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D70ABF7C-E397-4090-BD48-F6AEC8DC472C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D07EFF3-1F38-4239-A530-EEA037CD6DBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D07EFF3-1F38-4239-A530-EEA037CD6DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D07EFF3-1F38-4239-A530-EEA037CD6DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D07EFF3-1F38-4239-A530-EEA037CD6DBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,5 +57,6 @@ Global
 		{F38C7C12-1453-44D5-8782-56C9481DFF25} = {3C3DBF02-BB57-4C7A-935B-4158C90EB172}
 		{89344BDC-7207-4A0E-995A-F69649DB8A9B} = {3C3DBF02-BB57-4C7A-935B-4158C90EB172}
 		{25BB0F78-F90E-4F31-ADA4-A0B802A6C995} = {3C3DBF02-BB57-4C7A-935B-4158C90EB172}
+		{1D07EFF3-1F38-4239-A530-EEA037CD6DBE} = {DCD2B57B-1825-47C8-89AD-73FBD3803841}
 	EndGlobalSection
 EndGlobal
