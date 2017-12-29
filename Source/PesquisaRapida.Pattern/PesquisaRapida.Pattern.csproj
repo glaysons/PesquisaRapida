@@ -31,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RepositorioGenerico.Entities, Version=1.0.8.0, Culture=neutral, PublicKeyToken=b205877ad21d4617, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RepositorioGenerico.Pattern.1.0.8\lib\net40\RepositorioGenerico.Entities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RepositorioGenerico.Pattern, Version=1.0.8.0, Culture=neutral, PublicKeyToken=b205877ad21d4617, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RepositorioGenerico.Pattern.1.0.8\lib\net40\RepositorioGenerico.Pattern.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
@@ -40,6 +48,7 @@
     <Compile Include="Estrutura\CodigoResultado.cs" />
     <Compile Include="Estrutura\Dependente.cs" />
     <Compile Include="Estrutura\IConfiguracao.cs" />
+    <Compile Include="Estrutura\IPesquisaPersonalizada.cs" />
     <Compile Include="Estrutura\IResultadoPersonalizado.cs" />
     <Compile Include="Exceptions\CampoInvalidoException.cs" />
     <Compile Include="Exceptions\PropriedadeInvalidaException.cs" />
@@ -47,6 +56,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Estrutura\TipoCampos.cs" />
     <Compile Include="ResultadoPersonalizado.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

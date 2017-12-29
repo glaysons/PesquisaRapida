@@ -33,7 +33,7 @@ namespace PesquisaRapida
 			resultado.Pesquisa = _configuracao.TituloConfiguracao;
 			resultado.Titulos = ConsultarTitulosDaConsulta();
 			resultado.Colunas = ConsultarColunasDaConsulta();
-			resultado.Dados = ConsultarResultadoDaPesquisa(termo, pagina, dependentes);
+			resultado.Dados = ConsultarResultadoDaPesquisa(pagina, termo, dependentes);
 			resultado.Chave = ConsultarCampoChave();
 			resultado.Resultado = ConsultarCampoResultado();
 			return resultado;
