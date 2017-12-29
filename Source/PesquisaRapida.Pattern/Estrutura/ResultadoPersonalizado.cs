@@ -1,6 +1,4 @@
-﻿using PesquisaRapida.Pattern.Estrutura;
-
-namespace PesquisaRapida.Pattern
+﻿namespace PesquisaRapida.Pattern.Estrutura
 {
 	internal class ResultadoPersonalizado<T> : IResultadoPersonalizado
 	{

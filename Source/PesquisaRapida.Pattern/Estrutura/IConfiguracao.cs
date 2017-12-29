@@ -18,8 +18,6 @@ namespace PesquisaRapida.Pattern.Estrutura
 
 		IEnumerable<IResultadoPersonalizado> Resultado { get; }
 
-		IList<Dependente> Dependentes { get; }
-
 		string Condicao { get; }
 
 		string Relacionamento { get; }

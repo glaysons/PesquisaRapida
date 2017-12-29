@@ -40,8 +40,7 @@ namespace PesquisaRapida
 			if (!string.IsNullOrEmpty(_configuracao.Relacionamento))
 				config.AdicionarRelacionamento(_configuracao.Relacionamento);
 
-			if (dependentes != null)
-				AdicionarFiltroDosDependentesInformados(config, dependentes);
+			AdicionarFiltroDosDependentesInformados(_configuracao as IDependente, config, dependentes);
 
 			if (!string.IsNullOrEmpty(_configuracao.Condicao))
 				config.AdicionarCondicaoPersonalizada(_configuracao.Condicao);
@@ -58,12 +57,16 @@ namespace PesquisaRapida
 			return ConverterConsultaEmObjeto(config, pagina);
 		}
 
-		private void AdicionarFiltroDosDependentesInformados(IConfiguracaoQuery config, string[] dependentes)
+		private void AdicionarFiltroDosDependentesInformados(IDependente configuracaoDependentes, IConfiguracaoQuery config, string[] dependentes)
 		{
-			for (int indice = 0; indice < _configuracao.Dependentes.Count; indice++)
+			if (configuracaoDependentes == null)
+				return;
+			var camposDependentes = new List<Dependente>();
+			configuracaoDependentes.ConfigurarDependentes(camposDependentes);
+			for (int indice = 0; indice < camposDependentes.Count; indice++)
 			{
 				var nomeParametro = string.Concat("@dependente", indice + 1);
-				config.AdicionarCondicaoPersonalizada(_configuracao.Dependentes[indice].CondicaoSql);
+				config.AdicionarCondicaoPersonalizada(camposDependentes[indice].CondicaoSql);
 				if (indice < dependentes.Length)
 					config.DefinirParametro(nomeParametro).Valor(dependentes[indice]);
 				else

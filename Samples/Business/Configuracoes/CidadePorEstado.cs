@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using PesquisaRapida.Pattern.Estrutura;
 using PesquisaRapida.Pattern;
+using System;
 
 namespace Business.Configuracoes
 {
-	public class CidadePorEstado : Configuracao
+	public class CidadePorEstado : Configuracao, IDependente
 	{
 
 		public override string TituloConfiguracao { get; } = "Cadastro de Cidades";
@@ -17,13 +18,9 @@ namespace Business.Configuracoes
 
 		public override string Ordem { get; } = "Nome, CodigoEstado";
 
-		public override IList<Dependente> Dependentes { get; }
-
-		public CidadePorEstado()
+		public void ConfigurarDependentes(IList<Dependente> dependentes)
 		{
-			Dependentes = new List<Dependente>();
-			Dependentes.Add(new Dependente("Estado", "Cidades.CodigoEstado = @dependente0"));
+			dependentes.Add(new Dependente("Estado", "Cidades.CodigoEstado = @dependente0"));
 		}
-
 	}
 }

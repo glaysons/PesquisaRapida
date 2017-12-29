@@ -48,6 +48,7 @@
     <Compile Include="Estrutura\CodigoResultado.cs" />
     <Compile Include="Estrutura\Dependente.cs" />
     <Compile Include="Estrutura\IConfiguracao.cs" />
+    <Compile Include="Estrutura\IDependente.cs" />
     <Compile Include="Estrutura\IPesquisaPersonalizada.cs" />
     <Compile Include="Estrutura\IResultadoPersonalizado.cs" />
     <Compile Include="Exceptions\CampoInvalidoException.cs" />
@@ -55,7 +56,7 @@
     <Compile Include="Helpers\ExpressionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Estrutura\TipoCampos.cs" />
-    <Compile Include="ResultadoPersonalizado.cs" />
+    <Compile Include="Estrutura\ResultadoPersonalizado.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

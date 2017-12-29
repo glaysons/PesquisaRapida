@@ -35,8 +35,6 @@ namespace PesquisaRapida.Pattern
 			}
 		}
 
-		public virtual IList<Dependente> Dependentes { get; }
-
 		public virtual string Condicao { get; }
 
 		public virtual string Relacionamento { get; }

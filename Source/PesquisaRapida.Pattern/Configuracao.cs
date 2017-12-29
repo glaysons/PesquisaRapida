@@ -34,8 +34,6 @@ namespace PesquisaRapida.Pattern
 			get { return _resultado ?? (_resultado = CriarResultadoPadrao()); }
 		}
 
-		public virtual IList<Dependente> Dependentes { get; }
-
 		public virtual string Condicao { get; }
 
 		public virtual string Relacionamento { get; }

@@ -3,13 +3,13 @@
 	public class Dependente
 	{
 
-		public string Titulo { get; }
+		public string VariavelScope { get; }
 
 		public string CondicaoSql { get; }
 
-		public Dependente(string titulo, string condicaoSql)
+		public Dependente(string scope, string condicaoSql)
 		{
-			Titulo = titulo;
+			VariavelScope = scope;
 			CondicaoSql = condicaoSql;
 		}
 
