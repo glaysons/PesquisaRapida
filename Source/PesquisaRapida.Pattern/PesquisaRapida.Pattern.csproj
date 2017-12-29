@@ -30,6 +30,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PesquisaRapida.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="RepositorioGenerico.Entities, Version=1.0.8.0, Culture=neutral, PublicKeyToken=b205877ad21d4617, processorArchitecture=MSIL">
       <HintPath>..\..\packages\RepositorioGenerico.Pattern.1.0.8\lib\net40\RepositorioGenerico.Entities.dll</HintPath>
@@ -60,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="PesquisaRapida.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
