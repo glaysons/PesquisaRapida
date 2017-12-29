@@ -21,7 +21,7 @@ namespace PesquisaRapida.Pattern
 
 		public abstract string Tabela { get; }
 
-		public virtual TipoCampos TipoChave { get; } = TipoCampos.Integer;
+		public virtual TipoCampoChave TipoChave { get; } = TipoCampoChave.Integer;
 
 		public virtual string TituloResultado { get; } = "Nome";
 

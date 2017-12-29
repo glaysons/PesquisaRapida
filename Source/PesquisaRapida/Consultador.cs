@@ -111,7 +111,7 @@ namespace PesquisaRapida
 			sql.Append("(");
 			sql.Append(_configuracao.Resultado.FirstOrDefault(c => c.Chave).ExpressaoSql);
 
-			if (_configuracao.TipoChave == TipoCampos.Integer)
+			if (_configuracao.TipoChave == TipoCampoChave.Integer)
 			{
 				int numero;
 				if (int.TryParse(termo.Replace(" ", string.Empty), out numero))
@@ -122,7 +122,7 @@ namespace PesquisaRapida
 				else
 					sql.Append(" is null");
 			}
-			else if (_configuracao.TipoChave == TipoCampos.Double)
+			else if (_configuracao.TipoChave == TipoCampoChave.Double)
 			{
 				double numero;
 				if (double.TryParse(termo.Replace(" ", string.Empty), out numero))

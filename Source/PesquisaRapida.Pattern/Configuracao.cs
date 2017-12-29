@@ -23,7 +23,7 @@ namespace PesquisaRapida.Pattern
 
 		public virtual string TituloChave { get; } = "Cód.";
 
-		public virtual TipoCampos TipoChave { get; } = TipoCampos.Integer;
+		public virtual TipoCampoChave TipoChave { get; } = TipoCampoChave.Integer;
 
 		public abstract string CampoResultado { get; }
 

@@ -1,6 +1,6 @@
 ﻿namespace PesquisaRapida.Pattern.Estrutura
 {
-	public enum TipoCampos
+	public enum TipoCampoChave
 	{
 		String = 1,
 		Integer = 2,

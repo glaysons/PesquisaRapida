@@ -12,7 +12,7 @@ namespace PesquisaRapida.Pattern.Estrutura
 
 		string Tabela { get; }
 
-		TipoCampos TipoChave { get; }
+		TipoCampoChave TipoChave { get; }
 
 		string TituloResultado { get; }
 

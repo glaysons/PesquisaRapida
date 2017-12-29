@@ -12,7 +12,7 @@ namespace Business.Configuracoes
 
 		public override string CampoChave { get; } = "CodigoEstado";
 
-		public override TipoCampos TipoChave { get; } = TipoCampos.String;
+		public override TipoCampoChave TipoChave { get; } = TipoCampoChave.String;
 
 		public override string CampoResultado { get; } = "Nome";
 
